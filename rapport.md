@@ -1,4 +1,5 @@
 # Partie VM VirtualBox
+<<<<<<< HEAD
 ## Definition de la machine virtuellle : 
 Une machine virtuelle (VM), en informatique, est une émulation logicielle d'un ordinateur physique. Elle permet à un seul ordinateur physique (appelé hôte) d'exécuter plusieurs systèmes d'exploitation simultanément. Chaque machine virtuelle fonctionne comme un ordinateur autonome avec son propre système d'exploitation (invité) et ses applications, mais elle partage les ressources matérielles de l'hôte, telles que le processeur, la mémoire et le stockage.
 
@@ -32,6 +33,10 @@ Les émulateurs sont utilisés pour exécuter des jeux vidéo, des anciens syst�
 En résumé, les hyperviseurs sont principalement utilisés pour la virtualisation de machines, tandis que les émulateurs sont utilisés pour exécuter des logiciels conçus pour d'autres systèmes ou architectures matérielles.
 
 # Some possible problem 
+=======
+
+# Les problemes renceontres 
+>>>>>>> 4f685ba0b7e8f5bd98c41f2100d18aa3ab9ecfa3
 ## Guest Addition installation problem
 Manually Mount Guest Additions:
 If the automatic insertion doesn't work, you can try manually mounting the Guest Additions ISO.
