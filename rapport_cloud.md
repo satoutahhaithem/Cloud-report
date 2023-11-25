@@ -1,7 +1,7 @@
 # Rapport
 
-### Allouache Ayhem | ISI
-### Satoutah Haithem | ISI
+### Allouache Ayhem  Grp02| ISI
+### Satoutah Haithem Grp01| ISI
 
 ## Definition de la machine virtuellle : 
 Une machine virtuelle (VM), en informatique, est une émulation logicielle d'un ordinateur physique. Elle permet à un seul ordinateur physique (appelé hôte) d'exécuter plusieurs systèmes d'exploitation simultanément. Chaque machine virtuelle fonctionne comme un ordinateur autonome avec son propre système d'exploitation (invité) et ses applications, mais elle partage les ressources matérielles de l'hôte, telles que le processeur, la mémoire et le stockage.
