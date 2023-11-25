@@ -31,7 +31,53 @@ Les hyperviseurs sont utilisés pour la virtualisation de machines et la gestion
 Les émulateurs sont utilisés pour exécuter des jeux vidéo, des anciens systèmes d'exploitation, ou des applications spécifiques.
 En résumé, les hyperviseurs sont principalement utilisés pour la virtualisation de machines, tandis que les émulateurs sont utilisés pour exécuter des logiciels conçus pour d'autres systèmes ou architectures matérielles.
 
-# Some possible problem 
+
+# VMware
+
+# Définition 
+VMware est une entreprise spécialisée dans la virtualisation et les solutions de cloud computing. La virtualisation VMware permet de créer des machines virtuelles sur un même matériel physique, permettant ainsi d'exécuter plusieurs systèmes d'exploitation simultanément.
+
+# Histoire
+ VMware a été fondée en 1998. Son produit phare, VMware Workstation, a été lancé en 1999. Depuis, la société a développé plusieurs produits de virtualisation, notamment VMware ESXi (un hyperviseur), VMware vSphere (une suite de virtualisation de serveurs), et d'autres solutions liées au cloud computing.
+
+# Fonctionnalités
+ Les fonctionnalités de VMware dépendent du produit spécifique, mais en général, elles incluent la migration à chaud des machines virtuelles, la gestion centralisée des ressources, la création de clones de machines virtuelles, la sauvegarde et la restauration rapides, ainsi que des fonctionnalités de sécurité avancées.
+
+# Utilisations
+ VMware est largement utilisé dans les entreprises pour la consolidation des serveurs, la gestion de data centers, la création d'environnements de tests et de développement, la fourniture de bureaux virtuels (VDI), et la mise en place de solutions de cloud computing.
+
+
+# VirtualBox
+
+# Définition
+ VirtualBox est un logiciel de virtualisation open source développé par Oracle. Il permet aux utilisateurs de créer et de gérer des machines virtuelles sur leurs ordinateurs.
+
+# Histoire
+ VirtualBox a été initialement développé par la société allemande Innotek, qui a été rachetée par Sun Microsystems en 2008. Oracle a acquis Sun Microsystems en 2010, et depuis lors, VirtualBox est maintenu par Oracle.
+
+# Fonctionnalités
+ VirtualBox offre des fonctionnalités telles que la prise en charge de divers systèmes d'exploitation invités, la possibilité de créer des instantanés (snapshots) pour revenir à un état antérieur, la prise en charge de l'accélération matérielle, la gestion de réseau avancée, et une interface utilisateur conviviale.
+
+# Utilisations
+ VirtualBox est couramment utilisé pour des besoins de développement, de tests, d'éducation et d'expérimentation. Il est également populaire chez les utilisateurs individuels qui souhaitent exécuter plusieurs systèmes d'exploitation sur une seule machine physique, par exemple, pour tester des logiciels dans différents environnements.
+
+# Tableau comparatif entre Vmware et Virtual Box
+
+| Critères | VMware | VirtualBox |
+| --- | --- | --- |
+| Types de Virtualisation | Hyperviseur de Type 1 (bare-metal) et Type 2 (hosted) | Hyperviseur de Type 2 (hosted) |
+| OS Supportés | Large support pour les systèmes d'exploitation invités, y compris Windows, Linux, macOS, et d'autres | Support étendu pour divers OS, y compris Windows, Linux, macOS, Solaris, etc. |
+| Migration de VM | Migration à chaud des machines virtuelles via vMotion dans les solutions professionnelles comme VMware vSphere | Possibilité de déplacer des machines virtuelles en utilisant des fonctionnalités telles que "Clone" et "Export" |
+| Sécurité | Offre des fonctionnalités avancées de sécurité, y compris le chiffrement des disques virtuels, l'authentification à deux facteurs, et la gestion des accès | Moins axé sur les fonctionnalités de sécurité avancées, convient davantage à un usage personnel ou de développement |
+| Performances | Performances élevées, surtout dans des environnements professionnels avec des solutions telles que VMware ESXi | Bonnes performances pour des besoins individuels, mais peut être moins optimisé pour des environnements à grande échelle |
+| Gestion des Ressources | Gestion avancée des ressources avec des fonctionnalités telles que DRS (Distributed Resource Scheduler) pour une répartition dynamique des charges de travail | Gestion des ressources adaptée aux besoins individuels, mais moins robuste que les solutions professionnelles de VMware |
+| Communauté et Support | Forte communauté et support professionnel disponible avec une gamme de produits variés | Communauté active, mais le support professionnel est limité par rapport à VMware |
+| Coût | Souvent considéré comme plus onéreux, surtout pour les solutions professionnelles | Gratuit en tant que logiciel open source, avec des options d'extension pour un support commercial |
+| Convivialité | Interfaces utilisateur conviviales et bien développées, adaptées aux utilisateurs professionnels | Interface utilisateur conviviale, idéale pour les utilisateurs individuels et les petites entreprises |
+
+
+
+# Les problemes renceontres 
 ## Guest Addition installation problem
 Manually Mount Guest Additions:
 If the automatic insertion doesn't work, you can try manually mounting the Guest Additions ISO.
@@ -60,7 +106,7 @@ Usermod -aG sudo user-name
 ```
 # Configuration of vitual machine 
 ## ubuntu installation
-![Installation](img/installation.png)
+![Installation](img/installation.png =100x20)
 ![Installation2](img/installation2.png)
 ![Installation2](img/configuration1.png)
 ![Installation2](img/configurationHardDrive.png)
@@ -179,3 +225,298 @@ Usermod -aG sudo user-name
 
 
 
+# **Partie VMware**
+
+# Créer une duplication (clone) de l’état actuel de la VM Windows 7 (full réplication).
+
+<center>
+<div style="text-align:center;"></div>
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled.png" alt="Untitled" width="70%">
+</div>
+
+> Une nouvelle machine clone a été créée.
+
+
+<br>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%201.png" alt="Untitled" width="30%">
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Configurer un partage de fichiers entre la VM et l'hôte.
+
+
+> - On doit d’abord aller vers les parametre de machine viruelle → options → Shared Folder  et le modifier vers “Always enabled” et ajouter le chemain du dossier dans la machine host
+>- On doit installer Vmware Tools pour qu’on puisse faire le partage entre la machine host et guest.
+>- On peut voire que le fichier est bien partage entre la machine host et guest.
+
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%202.png" alt="Untitled" width="70%">
+</div>
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%203.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%204.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%205.png" alt="Untitled" width="70%">
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Configurer un partage des périphériques entre la VM et l'hôte.
+
+
+> On ajoute un nouveau périphériques. et on notice que l’on peut voire sur la machine host et guest
+
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%206.png" alt="Untitled" width="70%">
+</div>
+
+# Créer et restaurer une image instantanée (snapshot) pour la VM Windows 7.
+
+
+ > Pour prendre une snapshot dans vmware , on clique sur VM → Snapshot → Take Snapshot
+
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%207.png" alt="Untitled" width="90%">
+</div>
+
+
+ > Pour restaurer un snaphshot on clique sur : revert to Snapshot : Snapshot windows 7 , et on va voire qu’on a reviendrai dans la meme etat et la position ou on a creee le snapshot
+
+
+<br>
+<br>
+<br>
+
+# Mettre les VMs dans un réseau privé (Host-Only) :
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%208.png" alt="Untitled" width="100%">
+</div>
+
+
+ > l’intervalle de reseau et de 192.168.157.128 → 192.168.157.254
+
+
+
+### Ip address pour Windows 7 et Ubuntu
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%209.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2010.png" alt="Untitled" width="70%">
+</div>
+
+
+192.168.221.3
+
+<br>
+<br>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2011.png" alt="Untitled" width="70%">
+</div>
+
+192.168.221.4
+
+> toutes le machine sont dans le meme reseau
+
+> On teste la connectivite
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2012.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2013.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2014.png" alt="Untitled" width="70%">
+</div>
+
+
+
+
+
+# Mettre les VMs sur le mode de réseau virtuel NAT
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2015.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2016.png" alt="Untitled" width="70%">
+</div>
+
+192.168.26.128
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2017.png" alt="Untitled" width="70%">
+</div>
+
+192.168.26.129
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2018.png" alt="Untitled" width="70%">
+</div>
+
+>ping de les vm vers l’hote
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2019.png" alt="Untitled" width="70%">
+</div>
+
+>acceder vers l’internet a partir les vms
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2020.png" alt="Untitled" width="70%">
+</div>
+
+## Port forwarding
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2021.png" alt="Untitled" width="60%">
+</div>
+
+
+ >on peut acceder vers le server apache a travers notre host
+
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2022.png" alt="Untitled" width="70%">
+</div>
+
+
+# 8. Mettre les VMs sur le mode de réseau virtuel Bridged.
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2023.png" alt="Untitled" width="70%">
+</div>
+
+## L’attribution des addresses IPHost
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2024.png" alt="Untitled" width="70%">
+</div>
+
+Ubuntu→ 192.168.34.211
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2025.png" alt="Untitled" width="70%">
+</div>
+
+Windows7 → 192.168.34.45
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2026.png" alt="Untitled" width="70%">
+</div>
+                                                                Host → 192.168.34.99
+
+
+ >Toutes les machine sont dans le meme sous reseau , et la machine host est connecte a l’internet (on peut pinger 8.8.8.8)
+Le pasrelle par default est : 192.168.34.215
+
+
+
+## Teste de connectivite entre les machines
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2027.png" alt="Untitled" width="70%">
+</div>
+
+>ping ubuntu vers windows7
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2028.png" alt="Untitled" width="70%">
+</div>
+
+>ping windows7 vers ubuntu
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2029.png" alt="Untitled" width="70%">
+</div>
+
+
+>ping windows ver ubuntu et windows7
+
+## Teste de connectivite vers l’internet
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2030.png" alt="Untitled" width="70%">
+</div>
+
+>Windows7 peut connecter a l’internet
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2031.png" alt="Untitled" width="70%">
+</div>
+
+>Ubuntu peut connecter a l’internet
+
+# 9. Mettre les deux VMs sur deux modes de réseau virtuel différents (une VM sur le Nat et autre sur Host-Only)
+
+
+ >Le server DHCP est desactive dans les deux vm
+Windows7 → NAT
+Ubuntu → Host-Only
+
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2032.png" alt="Untitled" width="70%">
+</div>
+
+
+ >On va attribuer un ip static pour chacune des machines virtuelles
+
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2033.png" alt="Untitled" width="70%">
+</div>
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2034.png" alt="Untitled" width="70%">
+</div>
+
+ip ubuntu : 192.168.1.21
+
+ip windows7 : 192.168.1.20
+
+
+<div style="text-align:center;">
+  <img src="Cloud%20virtualisation%200df1c723f6554204aac3fdc12b061b18/Untitled%2035.png" alt="Untitled" width="70%">
+</div>
+
+> On peut pas faire une connection entre  le windows et ubuntu
